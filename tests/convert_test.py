@@ -74,4 +74,4 @@ def testToScipyLinearOperator():
 
         np.testing.assert_allclose(A_op(input_mat), A_sci(input_mat))
         np.testing.assert_allclose(A_op.T(input_mat),
-                                   A_sci.rmatvec(input_mat))
+                                   A_sci.rmatmat(input_mat))
