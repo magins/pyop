@@ -112,7 +112,7 @@ def toMatrix(O, sparse = False):
 #  Scipy  #
 ###########
 
-def toScipyLinearOperator(O, dtype = np.float):
+def toScipyLinearOperator(O, dtype = np.float64):
     ''' Converts a LinearOperator into a scipy.sparse.linalg.LinearOperator
 
     Scipy comes with come handy functions for calculating properties of a
