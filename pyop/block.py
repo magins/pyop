@@ -62,7 +62,7 @@ We can also easily make block diagonal operators with
 from numpy import vsplit, vstack, tile, concatenate, cumsum, add
 from numpy import vstack as npvstack
 from pyop import LinearOperator, matmat
-from scipy.misc import doccer
+from scipy._lib import doccer
 
 import six
 
@@ -190,8 +190,8 @@ def blockDiag(blocks):
 
         ## Apply each operator to corresponding subvector and concatenate
         ## the results.
-        sub_outvecs = (b(v) for (b, v) in six.moves.zip(blocks,
-            vec_components))
+        sub_outvecs = [b(v) for (b, v) in six.moves.zip(blocks,
+            vec_components)]
 
         ## Concatenate the output sub-vectors together.
         return npvstack(sub_outvecs)
@@ -206,8 +206,8 @@ def blockDiag(blocks):
 
         ## Apply each operator to corresponding subvector and concatenate
         ## the results.
-        sub_outvecs = (b.T(v) for (b, v) in six.moves.zip(blocks,
-            vec_components))
+        sub_outvecs = [b.T(v) for (b, v) in six.moves.zip(blocks,
+            vec_components)]
 
         ## Concatenate the output sub-vectors together.
         return npvstack(sub_outvecs)
@@ -252,7 +252,7 @@ def __vertcat(vert_blocks):
 
         ## Apply each operator (forward or adjoint) to the input vector to
         ## get output vector sub-components.
-        sub_outvecs = (b(x) for b in vert_blocks)
+        sub_outvecs = [b(x) for b in vert_blocks]
         ## Concatenate the output sub-vectors together.
         return npvstack(sub_outvecs)
 

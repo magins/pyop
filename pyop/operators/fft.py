@@ -12,7 +12,7 @@ from operator import mul
 from pyop import matvectorized, LinearOperator
 
 
-from scipy.misc import doccer
+from scipy._lib import doccer
 
 __shape_doc = \
 """shape : tuple

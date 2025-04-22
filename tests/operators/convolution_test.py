@@ -9,7 +9,7 @@ import numpy as np
 
 from numpy import linspace, reshape, array, zeros, ravel
 import scipy.signal as signal
-from scipy.misc import derivative
+from pyop.operators.scipymisc import derivative
 
 num_tests = 25
 

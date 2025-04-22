@@ -134,7 +134,7 @@ def matvec(f):
 
     @matmat
     def wrapper(x):
-        return np.column_stack(f(c) for c in x.T)
+        return np.column_stack([f(c) for c in x.T])
 
     return __wrapIfPy3(wrapper, f)
 
