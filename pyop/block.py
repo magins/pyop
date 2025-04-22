@@ -62,7 +62,7 @@ We can also easily make block diagonal operators with
 from numpy import vsplit, vstack, tile, concatenate, cumsum, add
 from numpy import vstack as npvstack
 from pyop import LinearOperator, matmat
-from scipy.misc import doccer
+from scipy._lib import doccer
 
 import six
 

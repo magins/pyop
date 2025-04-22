@@ -9,7 +9,7 @@ from functools import partial
 
 from pyop import LinearOperator, matmat
 
-from scipy.misc import doccer
+from scipy._lib import doccer
 
 
 docdict = {

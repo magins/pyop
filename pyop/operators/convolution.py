@@ -1,6 +1,5 @@
 import numpy as np
 import scipy.signal as signal
-from scipy.misc import central_diff_weights
 
 from functools import reduce, partial
 from operator import mul
@@ -8,6 +7,7 @@ from operator import mul
 from itertools import repeat
 
 from pyop import LinearOperator, matvectorized
+from pyop.operators.scipymisc import central_diff_weights
 
 import six
 
